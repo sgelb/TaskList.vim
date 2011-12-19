@@ -150,6 +150,9 @@ function! s:OpenWindow(buffnr, lineno)
     set foldlevel=0
     normal! zR
 
+    " Set the tasklist buffer filetype to tasklist
+    setlocal filetype=tasklist
+
     " Resize line if too big.
     let l:hits = line("$")
     if l:hits < winheight(0)
