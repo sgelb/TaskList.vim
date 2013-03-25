@@ -14,9 +14,8 @@ releases for this specific repository.
 
 # About
 
-This version of **TaskList.vim** includes the changes of (Pete Lewis's 
-fork)[https://github.com/petelewis/TaskList.vim] and (azizlight
-
+This version of **TaskList.vim** mostly includes the changes
+of [Pete Lewis's fork](https://github.com/petelewis/TaskList.vim)
 
 # Installation
 I recommend using [Vundle](https://github.com/gmarik/vundle#readme).
