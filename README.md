@@ -12,12 +12,12 @@ I don't know if the original maintainer of this plug-in is still *maintaining*
 it, but I'll hold responbility in terms of bug fixes, feature updates and 
 releases for this specific repository.
 
-# About
+## About
 
 This version of **TaskList.vim** mostly includes the changes
 of [Pete Lewis's fork](https://github.com/petelewis/TaskList.vim)
 
-# Installation
+## Installation
 I recommend using [Vundle](https://github.com/gmarik/vundle#readme).
 
 **Vundle installation:**
@@ -27,7 +27,7 @@ Bundle 'jalcine/TaskList.vim'
 
 You're done.
 
-# TODO:
+## TODO:
 **TaskList.vim** has a lot of potential to improve functionality.
 
  * allow for variable-defined list of extra keywords for recognition.
