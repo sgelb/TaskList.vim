@@ -30,9 +30,8 @@ You're done.
 ## TODO:
 **TaskList.vim** has a lot of potential to improve functionality.
 
- * allow for variable-defined list of extra keywords for recognition.
- * provide a custom format string for the tasklist buffer.
- * define a unique filetype for the tasklist buffer.
+ * ~~allow for variable-defined list of extra keywords for recognition.~~
+ * ~~define a unique filetype for the tasklist buffer.~~
  * allow for loading tasks in all open buffers
  * data sources for tasks (Traq, Bugzilla, GitHub Issues).
  * highlight lines with task keywords in source code.
