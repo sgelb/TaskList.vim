@@ -128,6 +128,9 @@ endif
 
 " Script variables: {{{1
 "------------------------------------------------------------------------------
+if !exists('s:tlIsOpen')
+    let s:tlIsOpen = 0
+endif
 
 " Function: Open Window {{{1
 "--------------------------------------------------------------------------
@@ -278,6 +281,7 @@ function! s:Exit(key)
     normal! zz
 
     execute "set updatetime=".s:old_updatetime
+    let s:tlIsOpen = 0
 endfunction
 
 " Function: Check for screen update {{{1
@@ -289,6 +293,19 @@ function! s:CheckForUpdate()
     if b:selected_line != line(".")
         call <sid>UpdateDoc()
         let b:selected_line = line(".")
+    endif
+endfunction
+
+" Function: Toggle task list {{{1
+"--------------------------------------------------------------------------
+function! s:TaskListToggle()
+    "toggle task list
+    if s:tlIsOpen
+        let s:tlIsOpen = 0
+        call <sid>Exit(0)
+    else
+        let s:tlIsOpen = 1
+        call <sid>TaskList()
     endif
 endfunction
 
@@ -325,6 +342,7 @@ function! s:TaskList()
         echo "tasklist.vim: No task information found."
         echohl None
         execute 'normal! '.l:original_line.'G'
+        let s:tlIsOpen = 0
         return
     endif
 
@@ -366,6 +384,7 @@ endfunction
 
 " Command
 command! TaskList call s:TaskList()
+command! TaskListToggle call s:TaskListToggle()
 
 " Default key map
 if !hasmapto('<Plug>TaskList')
@@ -374,5 +393,6 @@ endif
 
 " Key map to Command
 nnoremap <unique> <script> <Plug>TaskList :TaskList<CR>
+nnoremap <unique> <script> <Plug>TaskListToggle :TaskListToggle<CR>
 
 " vim:fdm=marker:tw=75:ff=unix:
